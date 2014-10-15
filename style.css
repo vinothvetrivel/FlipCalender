@@ -1,0 +1,47 @@
+body {
+    color: #666;
+    font-family: Arial,Helvetica,sans-serif,Verdana;
+    font-size: 62.5%;
+    line-height: 1.3;
+}
+.dateSelect
+{
+	border: none;
+}
+.flightSearch .dateSelect .dateCal {
+    background: url("images/spriteSheetVertical.png") repeat scroll 0 -397px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    color: #666;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: 400;
+    left: 0;
+    min-height: 65px;
+    padding-top: 6px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 62px;
+}
+ 
+.flightSearch .dateSelect .dateCal span {
+    display: block;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.flightSearch .dateSelect .dateCal .flipDate {
+    background-position: center 0;
+    background-repeat: no-repeat;
+    height: 30px;
+    margin: 4px 0 5px;
+    overflow: hidden;
+    text-indent: -99999em;
+}
+.flightSearch .dateSelect .dateCal .flipMonth, .flightSearch .dateSelect .dateCal .flipYear {
+    display: inline;
+    vertical-align: top;
+}
+ 
+ 

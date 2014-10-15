@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<title>Flip Calender</title>
+		
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/moment.js"></script>
+		<script type="text/javascript" src="js/datePicker.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/master/build/css/bootstrap-datetimepicker.min.css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<style type="text/css">
+			.Relative { position:relative !important;}
+			.caltest
+			{
+				position:absolute; top:0px; left:0px; display:block; height:72px; width:63px; background:none; border:none;
+			}
+		</style>
+	</head>
+	<body>
+	<div style="position:relative;">
+		<div class="flightSearch" id="calenderDiv">
+			<div class="dateSelect">
+				<div class="dateCal input-group date Relative" id="calenderSpan">
+					<input type="hidden" class="form-control" id="depatureDate"/>
+					<span class="input-group-addon caltest"></span>
+					<span class="flipDay">Tue</span> 
+					<span class="flipDate" style="background-image: url(images/14.png);">14</span> 
+					<span class="flipMonth">Oct</span> 
+					<span class="flipYear ">2014</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="position:relative;">
+		<div class="flightSearch" id="calenderDiv1">
+			<div class="dateSelect">
+				<div class="dateCal input-group date Relative" id="calenderSpan1">
+					<input type="hidden" class="form-control" id="returnDate"/>
+					<span class="input-group-addon caltest" ></span>
+					<span class="flipDay">Tue</span> 
+					<span class="flipDate" style="background-image: url(images/14.png);">14</span> 
+					<span class="flipMonth">Oct</span> 
+					<span class="flipYear ">2014</span>
+				</div>
+			</div>
+		</div>
+	</div>        
+	<script type="text/javascript">
+		$(function () {
+			$("#calenderSpan").on('mouseenter',function(){
+				$(this).datetimepicker({
+					pickTime: false
+				});
+			});
+			$("#calenderSpan1").on('mouseenter',function(){
+				$(this).datetimepicker({
+					pickTime: false
+				});
+			});
+			var Today = moment(new Date()).format('ddd-MMM-D-YYYY').split("-");
+
+			if($('.flipDay'))
+            {
+                $('.flipDay').html(Today[0]);
+            }
+            if($('.flipDate'))
+            {
+                $('.flipDate').html(Today[2]);
+                $('.flipDate').css("background-image", "url(images/"+Today[2]+".png)");
+            }
+            if($('.flipMonth'))
+            {
+                $('.flipMonth').html(Today[1]);
+            }
+            if($('.flipYear'))
+            {
+                $('.flipYear').html(Today[3]);
+            }
+		});
+	</script>
+		              
+	</body>
+</html>
